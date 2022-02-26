@@ -1,3 +1,5 @@
+import GetCryptoFear from "./lib/callEndpoints"
+
 class CryptoAlternative {
     age:number
     private name:string
@@ -14,4 +16,7 @@ class CryptoAlternative {
 let c = new CryptoAlternative()
 c.age = 17
 
-console.log(c.phraseage())
+const test = async () => {
+    console.log(await GetCryptoFear())
+}
+test()
