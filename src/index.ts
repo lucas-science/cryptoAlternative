@@ -1,5 +1,4 @@
-import { chownSync } from "fs"
-import { Ticker, Global,FearIndex, FearIndexPhoto } from "./lib/callEndpoints"
+import { Ticker, Global,FearIndex, FearIndexPhoto,FearIndexPhotoDate } from "./lib/callEndpoints"
 
 /*
 Ticker({limit:5,start:2,convert:'EUR',sort:'id'}).then(res => {
@@ -14,7 +13,3 @@ TokenNameIsOnListings("bitcoin").then(res=>{
 /*
 Global().then(res=> console.log(res))
 */
-
-FearIndexPhoto({
-    name:"toaadazdadato"
-})

@@ -2,7 +2,7 @@ import Fs from 'fs'
 import Path from 'path' 
 
 import endpoints from "./endpoints"
-import { TickerConfig,GlobalConfig, FearIndexConfig, FearIndexPhoto } from "./interface"
+import { TickerConfig,GlobalConfig, FearIndexConfig, FearIndexPhotoConfig, FearIndexPhotoDateConfig } from "./interface"
 import {CallAPI, DownloadIMG} from "./controllers"
 
 const Ticker = async (parametres?:TickerConfig):Promise<object> => {
@@ -43,11 +43,28 @@ const FearIndex = async (parametres?:FearIndexConfig):Promise<object> => {
     }
 }
 
-const FearIndexPhoto = async (parametres:FearIndexPhoto):Promise<any> => {
-    const url = 'https://alternative.me/crypto/fear-and-greed-index.png'
+const FearIndexPhoto = async (parametres:FearIndexPhotoConfig):Promise<any> => {
+    const url = `${endpoints.imageURL}/crypto/fear-and-greed-index.png`
     if(parametres.RelativePath){
         if(!Fs.existsSync(__dirname+`${parametres.RelativePath}`)){ // if folder doesnt exist
-            await Fs.promises.mkdir(__dirname+parametres.RelativePath)
+            await Fs.promises.mkdir(__dirname+parametres.RelativePath,{recursive:true})
+            const PATH = Path.resolve(__dirname, `${parametres.RelativePath.replace('/','')}`,`${parametres.name}.png`)
+            return await DownloadIMG(PATH,url)
+        }else{ // if folder exist
+            const PATH = Path.resolve(__dirname,`${parametres.RelativePath.replace('/','')}`,`${parametres.name}.png`)
+            return await DownloadIMG(PATH,url)
+        }
+    }else{
+        const PATH = Path.resolve(__dirname,`${parametres.name}.png`)
+        return await DownloadIMG(PATH,url)
+    }
+}
+
+const FearIndexPhotoDate = async (parametres:FearIndexPhotoDateConfig) => {
+    const url = `${endpoints.imageURL}/images/fng/crypto-fear-and-greed-index-${parametres.date.year}-${parametres.date.month}-${parametres.date.day}.png`
+    if(parametres.RelativePath){
+        if(!Fs.existsSync(__dirname+`${parametres.RelativePath}`)){ // if folder doesnt exist
+            await Fs.promises.mkdir(__dirname+parametres.RelativePath,{recursive:true})
             const PATH = Path.resolve(__dirname, `${parametres.RelativePath.replace('/','')}`,`${parametres.name}.png`)
             return await DownloadIMG(PATH,url)
         }else{ // if folder exist
@@ -65,5 +82,6 @@ export {
     Ticker,
     Global,
     FearIndex,
-    FearIndexPhoto
+    FearIndexPhoto,
+    FearIndexPhotoDate
 }

@@ -14,5 +14,14 @@ TokenNameIsOnListings("bitcoin").then(res=>{
 Global().then(res=> console.log(res))
 */
 (0, callEndpoints_1.FearIndexPhoto)({
-    name: "toaadazdadato"
+    name: 'lol',
+    RelativePath: '/la/lo/li'
 });
+(0, callEndpoints_1.FearIndexPhotoDate)({
+    name: 'tatitau',
+    date: {
+        day: 5,
+        month: 2,
+        year: 2020
+    }
+}).catch(err => console.log(err));

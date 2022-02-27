@@ -14,19 +14,22 @@ const CallAPI = (url:string):Promise<object> => {
 const DownloadIMG = async (path: Fs.PathLike,url:string):Promise<any> => {
     return new Promise(async (resolve,reject)=>{
         let writer = Fs.createWriteStream(path)
+        try{
+            const response = await axios({
+                url:url,
+                method: 'GET',
+                responseType: 'stream'
+            })
 
-        const response = await axios({
-            url:url,
-            method: 'GET',
-            responseType: 'stream'
-        })
-    
-        response.data.pipe(writer)
-    
-        return new Promise((resolve, reject) => {
-            writer.on('finish', resolve)
-            writer.on('error', reject)
-        })
+            response.data.pipe(writer)
+            
+            resolve(new Promise((resolve, reject) => {
+                writer.on('finish', resolve)
+                writer.on('error', reject)
+            }))
+        }catch{
+            reject(new Error('Image introuvable')) 
+        }
     })
 }
 

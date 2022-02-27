@@ -16,8 +16,18 @@ interface FearIndexConfig {
     date_format?: 'us'|'cn'|'kr'|'world'
 }
 
-interface FearIndexPhoto {
+interface FearIndexPhotoConfig {
     name:string;
+    RelativePath?:string;
+}
+
+interface FearIndexPhotoDateConfig {
+    name:string;
+    date:{
+        day:number;
+        month:number;
+        year:number;
+    }
     RelativePath?:string;
 }
 
@@ -25,5 +35,7 @@ export  {
     TickerConfig,
     GlobalConfig,
     FearIndexConfig,
-    FearIndexPhoto
+    FearIndexPhotoConfig,
+    FearIndexPhotoDateConfig
 }
+
