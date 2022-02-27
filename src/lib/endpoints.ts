@@ -1,3 +1,3 @@
 export default {
-    cryptoFear:"https://api.alternative.me/fng/?limit=10"
+    baseURL:"https://api.alternative.me"
 }

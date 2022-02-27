@@ -1,22 +1,20 @@
-import GetCryptoFear from "./lib/callEndpoints"
+import { chownSync } from "fs"
+import { Ticker, Global,FearIndex, FearIndexPhoto } from "./lib/callEndpoints"
 
-class CryptoAlternative {
-    age:number
-    private name:string
-    constructor() {
-        this.age = 0
-        this.name = ""
-    }
+/*
+Ticker({limit:5,start:2,convert:'EUR',sort:'id'}).then(res => {
+    console.log("lol",res)
+})
+*/
+/*
+TokenNameIsOnListings("bitcoin").then(res=>{
+    console.log(res)
+})*/
 
-    phraseage():string{
-        return "tu as " + this.age + " ans."
-    }
-}
+/*
+Global().then(res=> console.log(res))
+*/
 
-let c = new CryptoAlternative()
-c.age = 17
-
-const test = async () => {
-    console.log(await GetCryptoFear())
-}
-test()
+FearIndexPhoto({
+    name:"toaadazdadato"
+})
