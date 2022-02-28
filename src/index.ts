@@ -13,3 +13,9 @@ TokenNameIsOnListings("bitcoin").then(res=>{
 /*
 Global().then(res=> console.log(res))
 */
+
+FearIndexPhoto({
+    name:'talalala'
+})
+.then(r => console.log(r))
+.catch(err => console.log(err))
