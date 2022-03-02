@@ -1,13 +1,14 @@
 {
-    "name": "alternative_unoficial_api",
-    "version": "1.0.0",
+    "name": "@luxlhm/crypto_alternative",
+    "version": "1.0.3",
     "description": "",
-    "main": "index.js",
+    "main": "./build/index.js",
+    "files": ["/build"],
     "scripts": {
         "build": "tsc --build && node ./build/index.js",
         "clean": "tsc --build --clean"
     },
-    "author": "",
+    "author": "Lucas L'HOMME",
     "license": "ISC",
     "dependencies": {
         "@types/node": "^17.0.21",
