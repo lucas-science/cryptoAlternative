@@ -40,6 +40,7 @@ const GetTicker = async (parametres?:TickerConfig):Promise<object> => {
  * 
  * ```
  */
+
 const GetTickerSpecificCurrency = async (id:Number|String):Promise<object> => {
     const url = `${endpoints.baseURL}/v2/ticker/${id}/`
     return await CallAPI(url)
