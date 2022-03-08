@@ -10,6 +10,12 @@ You can use these functions to acces to the API :
 
 # How use CryptoAlternative ?
 
+To begin, install the npm package with the command : 
+```sh
+
+npm i @luxlhm/crypto_alternative
+```
+
 ## GetTicker
 
 Get coin prices updated every 5 minutes
