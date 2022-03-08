@@ -136,3 +136,6 @@ Parameters and optional parameters :
     RelativePath?:string;
 }
 ```
+## Sources
+Official crypto alternative [documentation](https://alternative.me/crypto/api/).
+
