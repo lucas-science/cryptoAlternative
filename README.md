@@ -1,4 +1,4 @@
-﻿# cryptoAlternative
+﻿# CryptoAlternative
 CryptoAlternative package enable us to use cyrpto [Alternative API](https://alternative.me/) with functionnal programmation.
 You can use these functions to acces to the API :
 - [GetTicker](#getticker)
