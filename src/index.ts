@@ -27,6 +27,7 @@ const GetTicker = async (parametres?:TickerConfig):Promise<object> => {
     }
 }
 
+
 /**
  * 
  * @param {Number or String} id give crypto id or name, bitcoin id is 1 or 'bitcoin'
