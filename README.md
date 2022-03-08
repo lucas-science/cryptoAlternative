@@ -99,11 +99,11 @@ Graph example :
 
 Example : 
 ```js
- * const crypto = require('@luxlhm/crypto_alternative')
- * 
- * crypto.GetFearIndexPhoto({name:'monday_fearindex'}).then(data => console.log(data))
- * // or
- * crypto.GetFearIndexPhoto({name:'monday_fearindex', RelativePath:'/PhotoDist'}).then(data => console.log(data))
+ const crypto = require('@luxlhm/crypto_alternative')
+  
+ crypto.GetFearIndexPhoto({name:'monday_fearindex'}).then(data => console.log(data))
+ // or
+ crypto.GetFearIndexPhoto({name:'monday_fearindex', RelativePath:'/PhotoDist'}).then(data => console.log(data))
 ```
 Optional parameters :
 ```ts
