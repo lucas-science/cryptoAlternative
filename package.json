@@ -1,6 +1,6 @@
 {
     "name": "@luxlhm/crypto_alternative",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "",
     "main": "./build/index.js",
     "files": ["/build"],
