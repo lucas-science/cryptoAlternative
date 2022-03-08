@@ -45,7 +45,7 @@ Example :
  // or 
  crypto.GetTickerSpecificCurrency(1).then(data => console.log(data)) 
 ```
-Optional parameters :
+Parameters :
 ```ts
 {
   id:Numer|String;
@@ -105,7 +105,7 @@ Example :
  // or
  crypto.GetFearIndexPhoto({name:'monday_fearindex', RelativePath:'/PhotoDist'}).then(data => console.log(data))
 ```
-Optional parameters :
+Parameters and optional parameters :
 ```ts
 {
     name:string;
@@ -124,7 +124,7 @@ Example :
  // or
  crypto.GetFearIndexPhotoDate({name:'monday_fearindex', RelativePath:'/PhotoDist', date:{day:20,month:3, year:2021}}).then(data => console.log(data)) 
 ```
-Optional parameters :
+Parameters and optional parameters :
 ```ts
 {
     name:string;
